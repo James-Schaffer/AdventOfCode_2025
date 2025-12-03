@@ -1,9 +1,9 @@
-// Solution to day1 : https://adventofcode.com/2025/day/1
+// Solution to day1.1 : https://adventofcode.com/2025/day/1
 // By James Schaffer 02/12/2025
 
-#include "Day1.h"
+#include "Day1_1.h"
 
-std::string Day1::run(const std::string &inputFile_dir) {
+std::string Day1_1::run(const std::string &inputFile_dir) {
 	std::ifstream inputFile(inputFile_dir);
 
 	int p = 50;
