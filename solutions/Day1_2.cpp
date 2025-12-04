@@ -2,7 +2,6 @@
 // By James Schaffer 02/12/2025
 
 #include "Day1_2.h"
-
 #include <iostream>
 
 std::string Day1_2::run(const std::string &inputFile_dir) {
