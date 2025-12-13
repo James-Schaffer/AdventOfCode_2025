@@ -1,4 +1,4 @@
-// FILE INFOMATION HERE
+// Solution to day4.1 : https://adventofcode.com/2025/day/4
 // Created by James Schaffer on 11/12/2025.
 
 #ifndef ADVENTOFCODE_2025_DAY4_1_H

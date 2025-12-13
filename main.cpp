@@ -9,6 +9,7 @@
 #include "solutions/Day3_1.h"
 #include "solutions/Day3_2.h"
 #include "solutions/Day4_1.h"
+#include "solutions/Day4_2.h"
 
 
 int main() {
@@ -40,6 +41,7 @@ int main() {
 			// Day 4
 			std::cout << "Day 4 : " << std::endl;
 			std::cout << Day4_1::run("./inputData/Day4.txt") << std::endl;
+			std::cout << Day4_2::run("./inputData/Day4.txt") << std::endl;
 			break;
 		default:
 			std::cout << "Day " << DAY << " not implemented";
