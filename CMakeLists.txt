@@ -20,4 +20,8 @@ add_executable(AdventOfCode_2025 main.cpp
         solutions/Day4_1.h
         solutions/Day4_2.cpp
         solutions/Day4_2.h
+        solutions/Day5_1.cpp
+        solutions/Day5_1.h
+        solutions/Day5_2.cpp
+        solutions/Day5_2.h
 )

@@ -8,8 +8,6 @@
 
 class Day4_2 {
 public:
-	static constexpr int ADJ_MATRIX[8][2] = {{0,1}, {1,1}, {1,0}, {1,-1}, {0, -1}, {-1,-1}, {-1,0}, {-1,1}};
-	static constexpr int TMP_MATRIX[3] = {-1, 0, 1};
 	static int numbValid(const std::string& last, const std::string& current, const std::string& next, std::string& newLine);
 	static std::string run(const std::string &inputFile_dir);
 };
