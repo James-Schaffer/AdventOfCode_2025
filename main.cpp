@@ -12,9 +12,10 @@
 #include "solutions/Day4_2.h"
 #include "solutions/Day5_1.h"
 #include "solutions/Day5_2.h"
+#include "solutions/Day6_1.h"
 
 int main() {
-	int DAY = 5;
+	int DAY = 6;
 
 	switch (DAY) {
 		case 1:
@@ -49,7 +50,11 @@ int main() {
 			std::cout << "Day 5 : " << std::endl;
 			std::cout << Day5_1::run("./inputData/Day5.txt") << std::endl;
 			std::cout << Day5_2::run("./inputData/Day5.txt") << std::endl;
-
+			break;
+		case 6:
+			// Day 6
+			std::cout << "Day 6 : " << std::endl;
+			std::cout << Day6_1::run("./inputData/Day6.txt") << std::endl;
 			break;
 		default:
 			std::cout << "Day " << DAY << " not implemented";
