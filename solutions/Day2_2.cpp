@@ -15,7 +15,6 @@ int Day2_2::simpleSI(__int64 x, int digits, int repeats) {
 	for (int i=0; i<repeats; i++) {
 		//std::cout << floor(i * ceil(floor(log10(x)) / repeats)) << ", ";
 		ret += LLpow10[
-			// log of ll ????? log10 is for double not long long
 			static_cast<int>(floor(i * ceil(floor(log10(x)) / repeats)))
 		];
 	}
