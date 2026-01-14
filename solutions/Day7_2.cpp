@@ -3,58 +3,64 @@
 
 #include "Day7_2.h"
 
-int Day7_2::branchTimeline(int pos, int line, std::vector<bool> tachyons, std::vector<std::string> reducedLines, std::string debug) {
-	// If at end stop, end of timeline
-	if (line >= reducedLines.size()) {
-		std::cout << debug << std::endl;
-		return 1;
-	}
-
-	// If empty move down a line
-	if (reducedLines[line][pos] == '.') {
-		return branchTimeline(pos, line+1, tachyons, reducedLines, debug + ".N");
-	}
-
-	// Simulate both timelines
-	int ret = 0;
-
-	ret += branchTimeline(pos-1, line+1, tachyons, reducedLines, debug + ".L");
-	ret += branchTimeline(pos+1, line+1, tachyons, reducedLines, debug + ".R");
-
-	return ret;
-}
-
-
 std::string Day7_2::run(const std::string &inputFile_dir) {
 	std::ifstream inputFile(inputFile_dir);
 	std::string line;
 
 	// All lines without empty lines
-	std::vector<std::string> reducedLines;
+	std::vector<long long> working = {};
+	std::vector<bool> tachyons = {};
 	int lineCount = 0;
-	int sPos = -1;
+	int lineWidth = 0;
 
 	// Read text file, it ignores last line but doesn't make a difference
 	while (std::getline(inputFile, line)) {
-		// Find S pos
-		if (lineCount == 0) {
-			for (int i=0; i < line.size(); i++) {
-				if (line[i]=='S') {
-					sPos = i;
-					break;
-				}
-			}
-		}
-
 		// Skip every other line as blank, increment line count after check
 		if ((lineCount++)%2 == 1) continue;
-		// Add line
-		reducedLines.push_back(line);
+
+		std::vector<long long> newWorking = {};
+		newWorking.resize(lineWidth); // Will be wrong size (0) on first itteration but not an issue as skipped
+
+		// For each char in line
+		for (int i=0; i < line.size(); i++) {
+			// If the start, setup and go to next
+			if (line[i]=='S') {
+				lineWidth = line.size();
+
+				working.resize(lineWidth, 0);
+				tachyons.resize(lineWidth, false);
+				newWorking.resize(lineWidth);
+
+				newWorking[i] = 1;
+				tachyons[i] = true;
+				break;
+			}
+
+			// If on first line and not S, continue
+			if (working.size() == 0) continue;
+
+			// If no tachyon here continue
+			if (working[i] == 0) continue;
+
+			// If empty below, move down
+			if (line[i] == '.') {
+				newWorking[i] += working[i];
+				continue;
+			}
+
+			// If splitter, split
+			newWorking[i-1] += working[i];
+			newWorking[i+1] += working[i];
+		}
+
+		working = newWorking;
 	}
 
 	inputFile.close();
 
-	int count = branchTimeline(sPos, 1, {}, reducedLines, "S");
-
+	long long count = 0;
+	for (long long i : working) {
+		count += i;
+	}
 	return std::to_string(count);
 }
