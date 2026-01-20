@@ -32,4 +32,6 @@ add_executable(AdventOfCode_2025 main.cpp
         solutions/Day7_1.h
         solutions/Day7_2.cpp
         solutions/Day7_2.h
+        solutions/Day8_1.cpp
+        solutions/Day8_1.h
 )
