@@ -17,3 +17,7 @@ Adding a comment here to say despite my initial goal of no AI, I have used it oc
 ### 20/01/26
 
 Adding another comment here to say, up till day 8 all solutions were my own, I used no external help to design the algorythm, only some with syntax and debugging. Day 8 was alot harder, whilst a simple O(n^2) algorithm would have been straight forward I want to come up with a more efficient algorythm which would scare better with the larger datasets of Advent Of Code (note the 1000 lines of code of the puzzle input which would require 499,500 iterations just to get all the distances between the points).
+
+### 21/01/16
+
+I ended up going with the straightforward solution as I couldn't figure it out. Day 8 was still the hardest yet but still very fun.
